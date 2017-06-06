@@ -86,7 +86,8 @@ class BaseLauncher(object):
         command_name = menu_name.lower().replace(" ", "_")
         if command_name.endswith("..."):
             command_name = command_name[:-3]
-
+        if not os.path.exists(app_path):
+            return
         # special case! @todo: fix this.
         # this is to allow this app to be loaded for sg entities of
         # type publish but not show up on the Shotgun menu. The
